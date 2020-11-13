@@ -67,6 +67,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " Vim autocomplete
 
 Plug 'ntpeters/vim-better-whitespace' " Highlight trailing whitespace
 
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
