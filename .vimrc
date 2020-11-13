@@ -10,6 +10,7 @@ set rtp+=/usr/local/opt/fzf
 set backspace=indent,eol,start
 set noswapfile
 set autowriteall
+set hidden
 
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
@@ -40,6 +41,13 @@ autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'Shopify/shadowenv.vim'
@@ -55,7 +63,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'tpope/vim-dispatch'       " Run background processes in tmux tabs
 Plug 'janko/vim-test'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Vim autocomplete
 
 Plug 'ntpeters/vim-better-whitespace' " Highlight trailing whitespace
 
