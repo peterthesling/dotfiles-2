@@ -23,6 +23,29 @@ inoremap kj <Esc>
 let mapleader = ","
 let g:mapleader = ","
 
+call plug#begin('~/.vim/plugged')
+
+Plug 'Shopify/shadowenv.vim'
+Plug 'janko/vim-test'
+
+Plug 'tpope/vim-fugitive'       " Git
+Plug 'tpope/vim-rhubarb'        " GitHub
+
+
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+Plug 'tpope/vim-dispatch'       " Run background processes in tmux tabs
+Plug 'janko/vim-test'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Vim autocomplete
+
+Plug 'ntpeters/vim-better-whitespace' " Highlight trailing whitespace
+
+Plug 'christoomey/vim-tmux-navigator'
+
+call plug#end()
+
 " Vim Test
 nmap <silent> <leader>tn :TestNearest<CR>
 nmap <silent> <leader>tf :TestFile<CR>
@@ -53,26 +76,19 @@ function! s:check_back_space() abort
 endfunction
 
 
-call plug#begin('~/.vim/plugged')
+" Fzf
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number -- '.shellescape(<q-args>), 0,
+  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 
-Plug 'Shopify/shadowenv.vim'
-Plug 'janko/vim-test'
+command! -bang -nargs=* GGrepNoTests
+  \ call fzf#vim#grep(
+  \   'git grep --line-number '.shellescape(<q-args>), 0,
+  \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
 
-Plug 'tpope/vim-fugitive'       " Git
-Plug 'tpope/vim-rhubarb'        " GitHub
+nmap <silent> <c-p> :GFiles<CR>
+nmap <silent> <c-t> :Buffers<CR>
+nmap <silent> <c-f> :GGrep<CR>
 
-
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
-Plug 'tpope/vim-dispatch'       " Run background processes in tmux tabs
-Plug 'janko/vim-test'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Vim autocomplete
-
-Plug 'ntpeters/vim-better-whitespace' " Highlight trailing whitespace
-
-Plug 'christoomey/vim-tmux-navigator'
-
-call plug#end()
 
