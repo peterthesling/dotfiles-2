@@ -11,6 +11,7 @@ set backspace=indent,eol,start
 set noswapfile
 set autowriteall
 set hidden
+set shortmess-=S
 
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
@@ -25,7 +26,7 @@ let g:mapleader = ","
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shopify/shadowenv.vim'
+" Plug 'Shopify/shadowenv.vim'
 Plug 'janko/vim-test'
 
 Plug 'tpope/vim-fugitive'       " Git
