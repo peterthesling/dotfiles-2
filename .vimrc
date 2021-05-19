@@ -32,7 +32,8 @@ Plug 'janko/vim-test'
 
 Plug 'tpope/vim-fugitive'       " Git
 Plug 'tpope/vim-rhubarb'        " GitHub
-
+Plug 'tpope/vim-commentary'     " Setting comments
+Plug 'tpope/vim-endwise'        " Automatically end functions
 
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -43,6 +44,7 @@ Plug 'janko/vim-test'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Vim autocomplete
 
 Plug 'ntpeters/vim-better-whitespace' " Highlight trailing whitespace
+Plug 'gcmt/taboo.vim' " Rename tabs
 
 Plug 'christoomey/vim-tmux-navigator'
 
