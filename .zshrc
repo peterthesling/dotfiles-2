@@ -143,3 +143,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+alias vi=/usr/local/bin/vim
+alias vim=/usr/local/bin/vim
+
