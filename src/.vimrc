@@ -47,6 +47,7 @@ Plug 'ntpeters/vim-better-whitespace' " Highlight trailing whitespace
 Plug 'gcmt/taboo.vim' " Rename tabs
 
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'AndrewRadev/splitjoin.vim' " Switch between single and multi-line statement
 
 call plug#end()
 
