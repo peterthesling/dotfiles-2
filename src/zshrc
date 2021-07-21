@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/peter-shopify/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -118,7 +118,7 @@ fi
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
-if [ -e /Users/peter-shopify/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/peter-shopify/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
@@ -130,17 +130,17 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/peter-private/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/peter-private/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/peter-private/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/peter-private/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/Users/peter-private/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/peter-private/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/peter-private/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/peter-private/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
 
 alias vi=/usr/local/bin/vim
