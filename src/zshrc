@@ -21,12 +21,11 @@ alias c='clear'
 
 if command -v dircolors &> /dev/null; then
   eval $(dircolors ~/.LS_COLORS)
-  alias ls="ls --color=auto -F"
 fi
 if command -v gdircolors &> /dev/null; then
   eval $(gdircolors ~/.LS_COLORS)
-  alias ls="ls --color=auto -F"
 fi
+alias ls="ls --color=auto -F"
 
 alias be='bundle exec'
 alias cat='bat'
