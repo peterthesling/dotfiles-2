@@ -19,7 +19,11 @@ fi
 alias x='exit'
 alias c='clear'
 
-eval $(dircolors ~/.LS_COLORS)
+if ! dircolors -v COMMAND &> /dev/null; then
+  eval $(gdircolors ~/.LS_COLORS)
+else
+  eval $(dircolors ~/.LS_COLORS)
+fi
 alias ls="ls --color=auto -F"
 
 alias be='bundle exec'
