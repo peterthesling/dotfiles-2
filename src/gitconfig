@@ -8,7 +8,7 @@
 [core]
 	editor = vim
 	commitgraph = true
-	pager = less -f -x
+	# pager = less -f -x
 [url "https://github.com/Shopify/"]
 	insteadOf = git@github.com:Shopify/
 	insteadOf = git@github.com:shopify/
