@@ -19,21 +19,21 @@ fi
 alias x='exit'
 alias c='clear'
 
-if command -v dircolors &> /dev/null; then
-  eval $(dircolors ~/.LS_COLORS)
-fi
-if command -v gdircolors &> /dev/null; then
-  eval $(gdircolors ~/.LS_COLORS)
-fi
+eval $(dircolors ~/.LS_COLORS)
 alias ls="ls --color=auto -F"
 
 alias be='bundle exec'
-alias cat='bat'
 alias git='hub'
 alias vim='nvim'
 alias vi='nvim'
 
 alias pdf='pandoc --to=latex -o out.pdf --latex-engine=xelatex --variable documentclass=amsart --variable mainfont="FreightText Pro" --variable monofont="IBM Plex Mono" --variable fontsize=11'
+
+if command -v batcat &> /dev/null; then
+  alias cat='batcat'
+elif command -v bat &> /dev/null; then
+  alias cat='bat'
+fi
 
 # Directory aliases are not common across machines, so source the local file
 if [[ -s "${ZDOTDIR:-$HOME}/.zshdirs" ]]; then
@@ -43,5 +43,3 @@ fi
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
